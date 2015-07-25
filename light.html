@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes change1 {
+            from {
+                background-color: yellow;
+            }
+            to{
+                background-color: transparent;
+            }
+        }
+
+        @keyframes change2 {
+            from {
+                background-color: transparent;
+            }
+            to{
+                background-color: yellow;
+            }
+        }
+
+        .container{
+            margin: 0 auto;
+            background-color: grey;
+            width: 110px;
+        }
+
+        #one, #three{
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: yellow;
+            animation: change1 1s linear infinite;
+            animation-direction: alternate;
+        }
+
+        #center{
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: transparent;
+            animation: change2 1s linear infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="one"></div>
+    <div id="center"></div>
+    <div id="three"></div>
+</div>
+</body>
+</html>

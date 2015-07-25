@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes swing {
+            from {
+                -ms-transform: rotate(45deg); /* IE 9 */
+                -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+                transform: rotate(45deg);
+            }
+            to{
+                -ms-transform: rotate(-45deg); /* IE 9 */
+                -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+                transform: rotate(-45deg);
+            }
+        }
+
+        .container{
+            margin: 0 auto;
+            animation: swing 5s ease infinite;
+            animation-direction: alternate;
+            transform-origin: 50% 0%;
+        }
+
+        #line{
+            margin: 0 auto;
+            left: 550px;
+            width: 2px;
+            height: 200px;
+            background-color: black;
+        }
+
+        #circle{
+            margin: 0 auto;
+            left: 500px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="line"></div>
+    <div id="circle"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        @keyframes bounce {
+             from {
+                 -ms-transform: translateY(0px); /* IE 9 */
+                 -webkit-transform: translateY(0px);/* Chrome, Safari, Opera */
+                 transform: translateY(0px);
+             }
+             to{
+                 -ms-transform: translateY(100px); /* IE 9 */
+                 -webkit-transform: translateY(100px); /* Chrome, Safari, Opera */
+                 transform: translateY(-100px);
+             }
+         }
+
+        @keyframes shade {
+            from {
+                margin: 0 30%;
+                opacity: 0.7;
+            }
+            to{
+                margin: 0;
+                opacity: 0.1;
+            }
+        }
+
+        .container{
+            width: 100px;
+            margin: 100px auto;
+        }
+
+        #apple{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: red;
+            animation: bounce 2s ease infinite;
+            animation-direction: alternate;
+        }
+
+        #shadow{
+            height: 20px;
+            background-color: darkgrey;
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: shade 2s ease infinite;
+            animation-direction: alternate;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="apple"></div>
+    <div id="shadow"></div>
+</div>
+</body>
+</html>

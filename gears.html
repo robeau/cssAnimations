@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        @keyframes turnCW {
+            from {
+                -ms-transform: rotate(0deg); /* IE 9 */
+                -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+                transform: rotate(0deg);
+            }
+            to{
+                -ms-transform: rotate(360deg); /* IE 9 */
+                -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes turnCCW {
+            from {
+                -ms-transform: rotate(360deg); /* IE 9 */
+                -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+                transform: rotate(360deg);
+            }
+            to{
+                -ms-transform: rotate(0deg); /* IE 9 */
+                -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+                transform: rotate(0deg);
+            }
+        }
+
+        .container{
+            width: 308px;
+            margin: 0 auto;
+        }
+
+        img{
+            height: 100px;
+            width: 100px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Click to change direction of the gears.</h1>
+    </header>
+</section>
+    <div class="container">
+        <img id="one" src="gear.png">
+        <img id="two" src="gear.png">
+        <img id="three" src="gear.png">
+    </div>
+    <script>
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var three = document.getElementById('three');
+        var container = document.querySelector('div.container');
+
+        function rotate(){
+            one.style.animation = 'turnCW 10s linear infinite';
+            two.style.animation = 'turnCCW 10s linear infinite';
+            three.style.animation = 'turnCW 10s linear infinite';
+        }
+
+        rotate();
+
+        container.addEventListener('click', function () {
+            if(one.style.animationName === 'turnCW'){
+                one.style.animationName = 'turnCCW';
+            }
+            else{
+                one.style.animationName = 'turnCW';
+            }
+            if(two.style.animationName === 'turnCW'){
+                two.style.animationName = 'turnCCW';
+            }
+            else{
+                two.style.animationName = 'turnCW';
+            }
+            if(three.style.animationName === 'turnCW'){
+                three.style.animationName = 'turnCCW';
+            }
+            else{
+                three.style.animationName = 'turnCW';
+            }
+        });
+        
+    </script>
+</body>
+</html>
