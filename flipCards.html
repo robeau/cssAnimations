@@ -10,7 +10,7 @@
                 transform: rotateY(0deg);
             }
             to{
-                transform: rotateY(360deg);
+                transform: rotateY(180deg);
             }
         }
 
@@ -32,7 +32,8 @@
         }
 
         div[id*="card"]:hover{
-            animation: flip 2s linear infinite;
+            animation: flip 2s linear ;
+            animation-fill-mode: forwards;
         }
 
         #card1{
