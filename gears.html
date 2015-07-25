@@ -32,13 +32,23 @@
         }
 
         .container{
+            position: absolute;
             width: 308px;
-            margin: 0 auto;
+            left: calc(50% - 150px);
         }
 
         img{
+            position: relative;
             height: 100px;
             width: 100px;
+        }
+
+        #two{
+            left: -15px;
+        }
+
+        #three{
+            left: -30px;
         }
 
         h1{
@@ -50,12 +60,12 @@
 <body>
 <section>
     <header>
-        <h1>Click to change direction of the gears.</h1>
+        <h1>Click to turn the inner gear <span></span> clockwise.</h1>
     </header>
 </section>
     <div class="container">
         <img id="one" src="gear.png">
-        <img id="two" src="gear.png">
+        <img id="two" src="gear2.png">
         <img id="three" src="gear.png">
     </div>
     <script>
@@ -63,6 +73,7 @@
         var two = document.getElementById('two');
         var three = document.getElementById('three');
         var container = document.querySelector('div.container');
+        var span = document.querySelector('span');
 
         function rotate(){
             one.style.animation = 'turnCW 10s linear infinite';
@@ -74,9 +85,11 @@
 
         container.addEventListener('click', function () {
             if(one.style.animationName === 'turnCW'){
+                span.innerHTML = 'counter ';
                 one.style.animationName = 'turnCCW';
             }
             else{
+                span.innerHTML = '';
                 one.style.animationName = 'turnCW';
             }
             if(two.style.animationName === 'turnCW'){
