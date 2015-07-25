@@ -2,9 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Door</title>
+    <style>
+
+        @keyframes open {
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(90deg);
+            }
+        }
+
+        @keyframes close {
+            from{
+                transform: rotateY(90deg);
+            }
+            to{
+                transform: rotateY(0deg);
+            }
+        }
+
+        .container{
+            width: 200px;
+            margin: 0 auto;
+            perspective: 500px;
+            perspective-origin: 50% 50%;
+        }
+
+        #frame{
+            height: 200px;
+            width: 100px;
+            background-color: saddlebrown;
+            border: 2px solid black;
+            padding-top: 20px;
+            transform-origin: 0% 0%;
+            animation: close 1s linear ;
+        }
+
+        #frame:hover{
+            animation: open 1s linear ;
+            animation-fill-mode: forwards;
+        }
+
+        #window{
+            height: 100px;
+            width: 60px;
+            background-color: lightcyan;
+            margin: 0 auto;
+            border: 2px solid black;
+        }
+
+        #knob{
+            height: 10px;
+            width: 10px;
+            background-color: goldenrod;
+            border-radius: 50%;
+            float: right;
+            border: 1px solid black;
+        }
+
+    </style>
 </head>
 <body>
+<div class="container">
+    <div id="frame">
+        <div id="window"></div>
+        <div id="knob"></div>
+    </div>
 
+</div>
 </body>
 </html>
