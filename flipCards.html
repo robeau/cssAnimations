@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flip Cards</title>
+    <style>
+
+        @keyframes flip {
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+
+        .container{
+            width: 812px;
+            margin: 0 auto;
+            perspective: 500px;
+            perspective-origin: 50% 50%;
+        }
+        
+        div[id*="card"]{
+            height: 200px;
+            width: 200px;
+            margin: 0 2px;
+            background-color: lightblue;
+            border-radius: 5%;
+            float: left;
+            text-align: center;
+        }
+
+        div[id*="card"]:hover{
+            animation: flip 2s linear infinite;
+        }
+
+        #card1{
+            margin: 0 2px 0 0;
+        }
+
+        #card4{
+            margin: 0 0 0 2px;
+        }
+
+        .red{
+            background-color: red;
+            height: 120px;
+            width: 90px;
+            float: right;
+        }
+
+        .blue{
+            background-color: blue;
+            height: 120px;
+            width: 90px;
+            float: left;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="card1">
+        <p>Card One</p>
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div>
+    <div id="card2">
+        <p>Card Two</p>
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div>
+    <div id="card3">
+        <p>Card Three</p>
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div>
+    <div id="card4">
+        <p>Card Four</p>
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div>
+</div>
+</body>
+</html>
