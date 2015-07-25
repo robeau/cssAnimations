@@ -81,29 +81,23 @@
             three.style.animation = 'turnCW 10s linear infinite';
         }
 
-        rotate();
-
-        container.addEventListener('click', function () {
-            if(one.style.animationName === 'turnCW'){
+        function reverse(element){
+            if(element.style.animationName === 'turnCW'){
                 span.innerHTML = 'counter ';
-                one.style.animationName = 'turnCCW';
+                element.style.animationName = 'turnCCW';
             }
             else{
                 span.innerHTML = '';
-                one.style.animationName = 'turnCW';
+                element.style.animationName = 'turnCW';
             }
-            if(two.style.animationName === 'turnCW'){
-                two.style.animationName = 'turnCCW';
-            }
-            else{
-                two.style.animationName = 'turnCW';
-            }
-            if(three.style.animationName === 'turnCW'){
-                three.style.animationName = 'turnCCW';
-            }
-            else{
-                three.style.animationName = 'turnCW';
-            }
+        }
+
+        rotate();
+
+        container.addEventListener('click', function () {
+            reverse(one);
+            reverse(two);
+            reverse(three);
         });
         
     </script>
